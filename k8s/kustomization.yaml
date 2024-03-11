@@ -4,8 +4,8 @@ kind: Kustomization
 namespace: testing
 
 resources:
-  # - namespace.yaml
+  - namespace.yaml
   - apps/kafka
-  # - apps/mongodb
-  # - apps/postgres
-  # - apps/python-demo-app
+  - apps/mongodb
+  - apps/postgres
+  - apps/python-demo-app
