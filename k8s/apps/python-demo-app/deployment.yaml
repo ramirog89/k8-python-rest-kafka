@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-demo-app
+  labels:
+    app: python-demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-demo-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: python-demo-app
+    spec:
+      containers:
+        - name: python-demo-app
+          image: python-demo-app
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8000
+          envFrom:
+          - configMapRef:
+              name: python-demo-config

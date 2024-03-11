@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongodb-config
+  labels:
+    app: mongodb
+data:
+  MONGO_INITDB_ROOT_USERNAME: mongodb_user
+  MONGO_INITDB_ROOT_PASSWORD: mongodb_pass
