@@ -4,8 +4,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.controller import demo1, demo2
+from src.service.kafka.consumer import listen_kafka_messages
 from src.config.logger import loggerConfig
-from src.service.confluent import listen_kafka_messages
 
 # Setup logger
 config.dictConfig(loggerConfig)

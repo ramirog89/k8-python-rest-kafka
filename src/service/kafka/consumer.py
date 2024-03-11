@@ -15,7 +15,7 @@ def consume_loop():
     try:
         consumer.subscribe([kafka_topic])
 
-        print("Kafka is listening.")
+        logger.info("Kafka is listening")
 
         while True:
             msg = consumer.poll(timeout=1.0)
@@ -32,7 +32,6 @@ def consume_loop():
                 logger.info(f"Kafka message recived: {msg.value()}")
     finally:
         logger.error("Kafka Closed connection")
-        # Close down consumer to commit final offsets.
         consumer.close()
 
 def listen_kafka_messages():
